@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Static files
+/staticfiles/
+
+# Media files
+/media/
+
+# Environment variables
+.env
+
+# Django development server PID file
+*.pid
+
+# IDE specific files
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Dependency directories
+venv/
+env/
+
+# Compiled Python bytecode
+*.pyc
+__pycache__/

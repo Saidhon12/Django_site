@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marsspaceshop</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 150px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        button{
+            height: 30px;
+            width: 100px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: rgb(23, 0, 153);
+            border-radius: 15px;
+            border: 1px solid rgb(0, 17, 255);
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="navbar">
+        <h1>Banana Market</h1>
+        <a href="{% url 'register' %}"><button>register</button></a>
+        <a href="{% url 'login' %}"><button>login</button></a>
+        <a href="{% url 'log_admin' %}"><button>login_admin</button></a>
+
+    </div>
+
+    <div class="Category">
+        <p>Category</p>
+        <ul>
+            <li><a href="">BMW</a></li>
+            <li><a href="">Mercedes</a></li>
+            <li><a href="">Audi</a></li>
+            <li><a href="">Kia</a></li>
+            <li><a href="">GM</a></li>
+            <li><a href="">Toyota</a></li>
+            <li><a href="">Chery</a></li>
+            <li><a href="">Tesla</a></li>
+            <li><a href="">BYD</a></li>
+        </ul>
+    </div>
+
+    <main class="Products">
+        <h1>All Products</h1>
+        <a href="{% url 'dashboard' %}">
+            {% for product in products %}
+            <div class="card">
+                <img src="{{ product.image.url }}">
+                <img src="/images/asus-rog_3840x2160_pc1fs.jpg">
+                <p>Цена: ${{ product.price }}</p>
+                <p>Описание товара: {{ product.malumot }}</p>
+            </div>
+            {% endfor %}
+        </a>
+    </main>
+
+
+    <div class="footer">
+        <p>&copy; Xazna shop</p>
+    </div>
+</body>
+
+</html>
